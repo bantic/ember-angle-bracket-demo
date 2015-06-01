@@ -1,0 +1,20 @@
+{{input value=firstName placeholder='First name'}}
+
+<full-name first={{firstName}} last="Forsyth" />
+
+<count-mutator count={{mut count}} />
+
+{{! bug cannot have a property and attr with the same name, so we pass this in as `countZ`.
+    We talk about this as the 'attrs' (outside world passing in info) and the "state".
+    In react there are two properties for: `this.attrs`, `this.state`.
+}}
+<count-non-mutator countZ={{count}} fire={{action (mut count)}} />
+
+<google-search />
+
+Application's count: {{count}}
+
+<x-block firstName={{firstName}} as |innerProp innerAction|>
+  X-Block says: {{innerProp}}.
+  <button {{action innerAction "secondArg"}}>Click</button>
+</x-block>
