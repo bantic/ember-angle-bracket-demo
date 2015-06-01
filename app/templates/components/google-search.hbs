@@ -1,0 +1,11 @@
+<div>
+  <h3>Google Search</h3>
+
+  {{input value=searchTerm placeholder='Search for something'}}
+
+  <br>
+
+  {{#if searchTerm}}
+    <a target='_blank' href='https://www.google.com/webhp?hl=en#hl=en&q={{searchTerm}}'>Search</a>
+  {{/if}}
+</div>
